@@ -6,6 +6,7 @@
 
 html {
     font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
 }
 
 .icon::before,
@@ -21,14 +22,19 @@ html {
     --bcg-color: #141922;
     --aside-color: #000000;
     --nav-color: #282828;
+    --header-color: #080B12;
     --aside-font: gray;
     --heading-font: white;
     --hover-text: #ADFF2F;
 }
 
 a {
-    color: black;
+    color: var(--aside-color);
     text-decoration: none;
+}
+
+li {
+    list-style-type: none;
 }
 
 img,
@@ -60,18 +66,15 @@ aside>div:first-child {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    overflow: auto;
 }
 
 aside a,
 aside {
     color: var(--aside-font);
-    font-weight: 600;
 }
 
 aside li {
-    list-style-type: none;
-    padding-left: 30px;
+    padding-left: 26px;
     width: fit-content;
 }
 
@@ -89,6 +92,7 @@ aside div h3 {
 }
 
 .aside-green {
+    border-left: 4px solid var(--aside-color);
     transition: all 0.30s;
 }
 
@@ -97,7 +101,7 @@ aside div h3 {
 }
 
 .aside-green:hover {
-    border-left: 3px solid var(--hover-text);
+    border-left: 4px solid var(--hover-text);
 }
 
 .hidden {
@@ -117,7 +121,7 @@ aside .aside-controls {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding-left: 30px;
+    padding-left: 26px;
     margin-bottom: 10px;
     width: fit-content;
 }
@@ -159,7 +163,7 @@ aside #playlists-menu>div a {
 aside #playlists-menu>div {
     width: fit-content;
     margin-block: 10px 25px;
-    padding-left: 30px;
+    padding-left: 26px;
 }
 
 aside #playlists-menu>div a::before {
@@ -199,7 +203,7 @@ aside #profile div {
 }
 
 aside #profile div:first-child {
-    padding-left: 30px;
+    padding-left: 26px;
 }
 
 aside #profile div:first-child figure {
@@ -230,8 +234,138 @@ aside #profile div:nth-child(3) figure img {
 
 main {
     width: calc(100% - 350px);
+    overflow: auto;
+}
+
+main a {
+    color: var(--aside-font);
+}
+
+
+main #upgrade-header {
+    position: fixed;
+    top: 0;
+    width: calc(100% - 350px);
+    background-color: var(--header-color);
+    text-align: right;
+    padding-block: 30px 45px;
+    padding-right: 30px;
+    z-index: 1;
+    box-shadow: 7px 39px 120px -33px rgba(0, 0, 0, 0.75);
+}
+
+main #upgrade-header a {
+    color: var(--heading-font);
+    border: 1px solid var(--heading-font);
+    border-radius: 30px;
+    padding: 10px 35px;
+}
+
+main #genres {
+    margin-top: 94px;
+}
+
+main #genres ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-block: 20px 50px;
+}
+
+main #genres ul li .green-hover {
+    opacity: 0;
+    height: 4px;
+    margin-inline: 30%;
+    margin-top: 5px;
+    background-color: var(--hover-text);
+}
+
+main #genres ul li:hover a {
+    color: var(--heading-font);
+}
+
+main #genres ul li:hover .green-hover {
+    opacity: 1;
+}
+
+main .content {
+    color: var(--aside-font);
+    width: 95%;
+    margin-inline: auto;
+    margin-bottom: 60px;
+}
+
+main .content#popular-artists {
+    margin-bottom: 20px;
+}
+
+main .content h2,
+main .content h3 {
+    color: var(--heading-font);
+}
+
+main .content#recently-played h2 {
+    margin-bottom: 30px;
+}
+
+main .content h2 {
+    margin-bottom: 10px;
+}
+
+main .content>span {
+    display: block;
+    margin-bottom: 30px;
+}
+
+main .content .media-grid {
+    display: flex;
+    gap: 20px;
+}
+
+main .content .media-grid .media-box {
+    width: calc(100% / 6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
     text-align: center;
-    color: white;
+}
+
+main .content .media-grid .media-box figure {
+    position: relative;
+}
+
+main .content .media-grid .media-box figure {
+    cursor: pointer;
+}
+
+main .content .media-grid .media-box figure i {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: var(--heading-font);
+}
+
+main .content .media-grid .media-box figure:hover img {
+    filter: brightness(50%);
+}
+
+main .content .media-grid .media-box figure:hover i {
+    display: block;
+}
+
+main .content#popular-artists .media-grid .media-box figure img {
+    border-radius: 50%;
+}
+
+main .content .media-grid .media-box h3:hover,
+main .content .media-grid .media-box a:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 footer {
@@ -241,7 +375,29 @@ footer {
     z-index: 1;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1328px) {
+
+    main .content .media-grid {
+        flex-wrap: wrap;
+    }
+
+    main .content .media-grid .media-box {
+        width: calc((100% / 4) - (60px / 4));
+    }
+
+    main .content {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1004px) {
+
+    main .content .media-grid .media-box {
+        width: calc((100% / 3) - (40px / 3));
+    }
+}
+
+@media screen and (max-width: 764px) {
 
     aside {
         width: 70px;
@@ -295,6 +451,7 @@ footer {
         padding-left: 0;
     }
 
+    .aside-green,
     .aside-green:hover {
         border-left: 0;
     }
@@ -302,5 +459,16 @@ footer {
     main {
         width: calc(100% - 70px);
         color: white;
+    }
+
+    main #upgrade-header {
+        width: calc(100% - 70px);
+    }
+}
+
+@media screen and (max-width: 648px) {
+
+    main .content .media-grid .media-box {
+        width: calc((100% / 2) - (20px / 2));
     }
 }
