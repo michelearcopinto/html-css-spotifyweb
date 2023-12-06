@@ -372,7 +372,131 @@ footer {
     background-color: var(--nav-color);
     height: 100px;
     width: 100%;
-    z-index: 1;
+    color: var(--heading-font);
+    position: relative;
+}
+
+#progress-song {
+    display: none;
+    width: 30vw;
+    height: 4px;
+    position: absolute;
+    top: 0;
+    background-color: var(--hover-text);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding-inline: 15px;
+}
+
+nav progress {
+    height: 8px;
+    background-color: red;
+}
+
+nav progress:hover {
+    cursor: pointer;
+}
+
+progress::-webkit-progress-value {
+    background: var(--hover-text);
+}
+
+nav label {
+    font-size: 13px;
+}
+
+nav #left-container {
+    display: flex;
+    gap: 80px;
+}
+
+nav #left-container #img-name {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav #left-container #img-name figure {
+    width: 50px;
+}
+
+nav #left-container #img-name ul li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+nav #left-container #img-name ul li:last-child {
+    font-size: 13px;
+    color: var(--aside-font);
+}
+
+nav #left-container #icons {
+    color: var(--aside-font);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+nav #left-container #icons i:hover {
+    color: var(--heading-font);
+    cursor: pointer;
+}
+
+nav #media-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+nav #media-controls div:first-child {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    font-size: 20px;
+}
+
+nav #media-controls div:first-child i:hover {
+    cursor: pointer;
+}
+
+nav #media-controls div:last-child {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+nav #media-controls div:last-child progress {
+    width: 35vw;
+}
+
+nav #audio-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 100%;
+    padding-block: 20px;
+}
+
+nav #audio-controls #progress-volume-vertical {
+    display: none;
+    width: 8px;
+    height: 100%;
+    background-color: var(--hover-text);
+}
+
+nav #audio-controls #progress-volume-vertical div {
+    width: 8px;
+    height: 50%;
+    background-color: var(--aside-font);
+}
+
+nav #audio-controls i:hover {
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1328px) {
@@ -394,6 +518,34 @@ footer {
 
     main .content .media-grid .media-box {
         width: calc((100% / 3) - (40px / 3));
+    }
+
+    #progress-song {
+        display: block;
+    }
+
+    nav #media-controls div:last-child {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 847px) {
+
+    nav #left-container {
+        display: flex;
+        gap: 30px;
+    }
+
+    nav #left-container #icons {
+        flex-direction: column;
+    }
+
+    nav #audio-controls progress {
+        display: none;
+    }
+
+    nav #audio-controls #progress-volume-vertical {
+        display: inline-block;
     }
 }
 
