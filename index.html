@@ -28,58 +28,63 @@
 <body>
     <div class="container">
         <aside>
-            <figure>
-                <img src="./assets/img/logo.svg" alt="spotify-logo">
-            </figure>
-            <figure class="hidden">
-                <img src="./assets/img/logo-small.svg" alt="spotify-logo-small">
-            </figure>
             <div>
-                <div class="aside-controls aside-green">
-                    <figure>
-                        <img src="./assets/img/home.svg" alt="home-aside-button">
-                    </figure>
-                    <a id="aside-home" href="">Home</a>
+                <figure>
+                    <img src="./assets/img/logo.svg" alt="spotify-logo">
+                </figure>
+                <figure class="hidden">
+                    <img src="./assets/img/logo-small.svg" alt="spotify-logo-small">
+                </figure>
+                <div id="main-controls">
+                    <div class="aside-controls aside-green">
+                        <figure>
+                            <img src="./assets/img/home.svg" alt="home-aside-button">
+                        </figure>
+                        <a id="aside-home" href="">Home</a>
+                    </div>
+
+                    <div class="aside-controls aside-green">
+                        <figure>
+                            <img src="./assets/img/search.svg" alt="search-aside-button">
+                        </figure>
+                        <a id="aside-search" href="">Cerca</a>
+                    </div>
+
+                    <div class="aside-controls aside-green">
+                        <figure>
+                            <img src="./assets/img/libreria.svg" alt="library-aside-button">
+                        </figure>
+                        <a id="aside-libray" href="">La tua libreria</a>
+                    </div>
                 </div>
 
-                <div class="aside-controls aside-green">
-                    <figure>
-                        <img src="./assets/img/search.svg" alt="search-aside-button">
-                    </figure>
-                    <a id="aside-search" href="">Cerca</a>
-                </div>
-
-                <div class="aside-controls aside-green">
-                    <figure>
-                        <img src="./assets/img/libreria.svg" alt="library-aside-button">
-                    </figure>
-                    <a id="aside-libray" href="">La tua libreria</a>
+                <div id="playlists-menu">
+                    <h3>PLAYLIST</h3>
+                    <div class="aside-green">
+                        <a href="">Crea Playlist</a>
+                    </div>
+                    <ul>
+                        <li class="aside-green"><a href="">Nome Playlist</a></li>
+                        <li class="aside-green"><a href="">Nome Playlist</a></li>
+                        <li class="aside-green"><a href="">Nome Playlist</a></li>
+                        <li class="aside-green"><a href="">Nome Playlist</a></li>
+                        <li class="aside-green"><a href="">Nome Playlist</a></li>
+                        <li class="aside-green"><a href="">Nome Playlist</a></li>
+                        <li class="aside-green"><a href="">Nome Playlist</a></li>
+                    </ul>
                 </div>
             </div>
 
-            <div id="playlists-menu">
-                <h3>PLAYLIST</h3>
-                <ul>
-                    <li class="aside-green"><a href="">Crea Playlist</a></li>
-                    <li class="aside-green"><a href="">Nome Playlist</a></li>
-                    <li class="aside-green"><a href="">Nome Playlist</a></li>
-                    <li class="aside-green"><a href="">Nome Playlist</a></li>
-                    <li class="aside-green"><a href="">Nome Playlist</a></li>
-                    <li class="aside-green"><a href="">Nome Playlist</a></li>
-                    <li class="aside-green"><a href="">Nome Playlist</a></li>
-                    <li class="aside-green"><a href="">Nome Playlist</a></li>
-                </ul>
-            </div>
-
-            <div class="profile">
-                <div class="aside-controls switch">
+            <div id="profile">
+                <div class="aside-controls aside-green switch">
                     <figure>
                         <img src="./assets/img/download.svg" alt="download-app">
                     </figure>
                     <a href="">Installa app</a>
                 </div>
+                <hr>
                 <div class="aside-controls switch">
-                    <figure class="show-mobile">
+                    <figure>
                         <img src="./assets/img/profile.svg" alt="user-pic">
                     </figure>
                     <h3>John Doe</h3>
@@ -88,7 +93,9 @@
         </aside>
 
         <main>
-            ciao
+            <div>
+                ciao
+            </div>
         </main>
 
     </div>

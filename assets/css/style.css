@@ -39,11 +39,12 @@ svg {
 
 body {
     background-color: var(--bcg-color);
+    height: 100vh;
 }
 
 .container {
     display: flex;
-    height: 92vh;
+    height: calc(100% - 100px);
 }
 
 aside {
@@ -51,9 +52,15 @@ aside {
     background-color: var(--aside-color);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    padding-block: 30px 10px;
+}
+
+aside>div:first-child {
+    display: flex;
+    flex-direction: column;
     gap: 30px;
-    padding-top: 30px;
-    position: relative;
+    overflow: auto;
 }
 
 aside a,
@@ -62,13 +69,19 @@ aside {
     font-weight: 600;
 }
 
-aside a:hover {
-    color: var(--heading-font);
-}
-
 aside li {
     list-style-type: none;
     padding-left: 30px;
+    width: fit-content;
+}
+
+aside li:hover {
+    color: var(--heading-font);
+    cursor: pointer;
+}
+
+aside li:hover a {
+    color: var(--heading-font);
 }
 
 aside div h3 {
@@ -91,9 +104,13 @@ aside div h3 {
     display: none;
 }
 
-aside>figure:first-child {
-    width: 50%;
+aside>div:first-child>figure:first-child {
+    width: 180px;
     padding-left: 30px;
+}
+
+aside>div:first-child>figure:first-child:hover {
+    cursor: pointer;
 }
 
 aside .aside-controls {
@@ -102,6 +119,7 @@ aside .aside-controls {
     gap: 10px;
     padding-left: 30px;
     margin-bottom: 10px;
+    width: fit-content;
 }
 
 aside .aside-controls:hover {
@@ -109,7 +127,7 @@ aside .aside-controls:hover {
 }
 
 aside .aside-controls figure {
-    width: 10%;
+    width: 35px;
 }
 
 aside .aside-controls:hover figure img {
@@ -125,7 +143,6 @@ aside .aside-controls figure img {
 }
 
 aside #playlists-menu h3 {
-    margin-bottom: 10px;
     padding-left: 30px;
 }
 
@@ -135,11 +152,17 @@ aside #playlists-menu ul {
     gap: 25px;
 }
 
-aside #playlists-menu ul li:first-child a {
+aside #playlists-menu>div a {
     font-size: 20px;
 }
 
-aside #playlists-menu ul li:first-child a::before {
+aside #playlists-menu>div {
+    width: fit-content;
+    margin-block: 10px 25px;
+    padding-left: 30px;
+}
+
+aside #playlists-menu>div a::before {
     content: "+";
     font-size: 50px;
     color: var(--aside-color);
@@ -153,63 +176,67 @@ aside #playlists-menu ul li:first-child a::before {
     margin-right: 15px;
 }
 
-aside #playlists-menu ul li:first-child:hover {
+aside #playlists-menu>div:hover {
     cursor: pointer;
 }
 
-aside #playlists-menu ul li:first-child:hover a {
+aside #playlists-menu>div:hover a {
     color: var(--heading-font);
 }
 
-aside #playlists-menu ul li:first-child:hover a::before {
+aside #playlists-menu>div:hover a::before {
     background-color: var(--heading-font);
 }
 
-aside>.profile {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    padding-inline: 30px;
+aside #profile {
+    justify-self: flex-end;
 }
 
-aside .profile div {
+aside #profile div {
     display: flex;
     padding-left: 0;
     margin-bottom: 0;
 }
 
-aside .profile div:first-child {
-    margin-bottom: 15px;
-    border-bottom: 2px solid var(--aside-font);
-    padding-block: 10px;
+aside #profile div:first-child {
+    padding-left: 30px;
 }
 
-aside .profile div:first-child figure {
-    width: 6%;
+aside #profile div:first-child figure {
+    width: 22px;
 }
 
-aside .profile div:nth-child(2) figure {
-    width: 8%;
+aside #profile hr {
+    margin-block: 10px 15px;
+    margin-inline: 30px;
+    border-color: var(--aside-font);
+}
+
+aside #profile div:nth-child(3) {
+    padding-left: 30px;
+}
+
+aside #profile div:nth-child(3) figure {
+    width: 27px;
     background-color: var(--aside-font);
     border-radius: 50%;
     aspect-ratio: 1;
     overflow: hidden;
 }
 
-aside .profile div:nth-child(2) figure img {
+aside #profile div:nth-child(3) figure img {
     filter: none;
 }
 
 main {
-    width: max-content;
+    width: calc(100% - 350px);
+    text-align: center;
+    color: white;
 }
 
 footer {
     background-color: var(--nav-color);
-    height: 8vh;
-    position: fixed;
-    bottom: 0;
+    height: 100px;
     width: 100%;
     z-index: 1;
 }
@@ -222,51 +249,45 @@ footer {
     }
 
     aside #playlists-menu,
-    aside>figure:first-child,
-    aside div:nth-child(3) .aside-controls a,
-    aside .profile div a,
-    aside .profile div h3 {
+    aside>div:first-child>figure:first-child,
+    aside #main-controls .aside-controls a,
+    aside #profile div a,
+    aside #profile hr,
+    aside #profile div h3 {
         display: none;
-    }
-
-    aside .profile div:first-child {
-        border-bottom: 0;
     }
 
     aside .hidden {
         display: block;
     }
 
-    aside figure:nth-child(2):hover {
+    aside>div>figure:nth-child(2):hover {
         cursor: pointer;
     }
 
-    aside .aside-controls figure {
+    aside #profile div:first-child figure {
+        width: 70%;
+        margin-inline: auto;
+        margin-bottom: 20px;
+    }
+
+    aside #profile div:nth-child(3) figure {
         width: 100%;
     }
 
-    aside .profile div:first-child figure {
-        width: 100%;
-    }
-
-    aside .profile div:nth-child(2) figure {
-        width: 100%;
-    }
-
-    aside>.profile {
-        bottom: 15px;
-        left: 15px;
-        right: 15px;
+    aside #profile hr {
         padding-inline: 0;
     }
 
-    aside .profile div:first-child {
-        margin-bottom: 15px;
-        border-bottom: 0;
-        padding-block: 0;
+    aside #profile div:first-child {
+        padding-left: 0;
     }
 
-    aside .profile div:first-child img {
+    aside #profile div:nth-child(3) {
+        padding-left: 0;
+    }
+
+    aside #profile div:first-child img {
         width: 90%;
     }
 
@@ -276,5 +297,10 @@ footer {
 
     .aside-green:hover {
         border-left: 0;
+    }
+
+    main {
+        width: calc(100% - 70px);
+        color: white;
     }
 }
