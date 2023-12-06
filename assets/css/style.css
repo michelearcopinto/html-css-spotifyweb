@@ -5,7 +5,7 @@
 }
 
 html {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .icon::before,
@@ -15,4 +15,266 @@ html {
     font-variant: normal;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    --bcg-color: #141922;
+    --aside-color: #000000;
+    --nav-color: #282828;
+    --aside-font: gray;
+    --heading-font: white;
+    --hover-text: #ADFF2F;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+img,
+svg {
+    display: block;
+    width: 100%;
+}
+
+body {
+    background-color: var(--bcg-color);
+}
+
+.container {
+    display: flex;
+    height: 92vh;
+}
+
+aside {
+    width: 350px;
+    background-color: var(--aside-color);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 30px;
+    position: relative;
+}
+
+aside a,
+aside {
+    color: var(--aside-font);
+    font-weight: 600;
+}
+
+aside a:hover {
+    color: var(--heading-font);
+}
+
+aside li {
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+aside div h3 {
+    color: var(--heading-font);
+}
+
+.aside-green {
+    transition: all 0.30s;
+}
+
+.switch {
+    transition: all 0.30s;
+}
+
+.aside-green:hover {
+    border-left: 3px solid var(--hover-text);
+}
+
+.hidden {
+    display: none;
+}
+
+aside>figure:first-child {
+    width: 50%;
+    padding-left: 30px;
+}
+
+aside .aside-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+aside .aside-controls:hover {
+    cursor: pointer;
+}
+
+aside .aside-controls figure {
+    width: 10%;
+}
+
+aside .aside-controls:hover figure img {
+    filter: none;
+}
+
+aside .aside-controls:hover a {
+    color: var(--heading-font);
+}
+
+aside .aside-controls figure img {
+    filter: invert(69%) sepia(2%) saturate(9%) hue-rotate(16deg) brightness(93%) contrast(94%);
+}
+
+aside #playlists-menu h3 {
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+
+aside #playlists-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+aside #playlists-menu ul li:first-child a {
+    font-size: 20px;
+}
+
+aside #playlists-menu ul li:first-child a::before {
+    content: "+";
+    font-size: 50px;
+    color: var(--aside-color);
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    display: inline-block;
+    width: 50px;
+    aspect-ratio: 1;
+    background-color: var(--aside-font);
+    margin-right: 15px;
+}
+
+aside #playlists-menu ul li:first-child:hover {
+    cursor: pointer;
+}
+
+aside #playlists-menu ul li:first-child:hover a {
+    color: var(--heading-font);
+}
+
+aside #playlists-menu ul li:first-child:hover a::before {
+    background-color: var(--heading-font);
+}
+
+aside>.profile {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    padding-inline: 30px;
+}
+
+aside .profile div {
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+aside .profile div:first-child {
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--aside-font);
+    padding-block: 10px;
+}
+
+aside .profile div:first-child figure {
+    width: 6%;
+}
+
+aside .profile div:nth-child(2) figure {
+    width: 8%;
+    background-color: var(--aside-font);
+    border-radius: 50%;
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+
+aside .profile div:nth-child(2) figure img {
+    filter: none;
+}
+
+main {
+    width: max-content;
+}
+
+footer {
+    background-color: var(--nav-color);
+    height: 8vh;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+@media screen and (max-width: 576px) {
+
+    aside {
+        width: 70px;
+        padding: 15px;
+    }
+
+    aside #playlists-menu,
+    aside>figure:first-child,
+    aside div:nth-child(3) .aside-controls a,
+    aside .profile div a,
+    aside .profile div h3 {
+        display: none;
+    }
+
+    aside .profile div:first-child {
+        border-bottom: 0;
+    }
+
+    aside .hidden {
+        display: block;
+    }
+
+    aside figure:nth-child(2):hover {
+        cursor: pointer;
+    }
+
+    aside .aside-controls figure {
+        width: 100%;
+    }
+
+    aside .profile div:first-child figure {
+        width: 100%;
+    }
+
+    aside .profile div:nth-child(2) figure {
+        width: 100%;
+    }
+
+    aside>.profile {
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        padding-inline: 0;
+    }
+
+    aside .profile div:first-child {
+        margin-bottom: 15px;
+        border-bottom: 0;
+        padding-block: 0;
+    }
+
+    aside .profile div:first-child img {
+        width: 90%;
+    }
+
+    aside .aside-controls {
+        padding-left: 0;
+    }
+
+    .aside-green:hover {
+        border-left: 0;
+    }
 }
