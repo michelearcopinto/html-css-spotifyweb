@@ -398,7 +398,11 @@ nav progress {
     background-color: red;
 }
 
-nav progress:hover {
+footer #progress-song,
+nav progress:hover,
+nav #left-container #img-name ul li:hover,
+nav i:hover,
+nav #progress-volume-vertical {
     cursor: pointer;
 }
 
@@ -423,11 +427,32 @@ nav #left-container #img-name {
 
 nav #left-container #img-name figure {
     width: 50px;
+    position: relative;
+}
+
+nav #left-container #img-name figure:hover {
+    cursor: pointer;
+}
+
+nav #left-container #img-name figure i {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--heading-font);
+}
+
+nav #left-container #img-name figure:hover img {
+    filter: brightness(50%);
+}
+
+nav #left-container #img-name figure:hover i {
+    display: block;
 }
 
 nav #left-container #img-name ul li:hover {
     text-decoration: underline;
-    cursor: pointer;
 }
 
 nav #left-container #img-name ul li:last-child {
@@ -444,7 +469,6 @@ nav #left-container #icons {
 
 nav #left-container #icons i:hover {
     color: var(--heading-font);
-    cursor: pointer;
 }
 
 nav #media-controls {
@@ -458,10 +482,6 @@ nav #media-controls div:first-child {
     justify-content: center;
     gap: 25px;
     font-size: 20px;
-}
-
-nav #media-controls div:first-child i:hover {
-    cursor: pointer;
 }
 
 nav #media-controls div:last-child {
@@ -493,10 +513,6 @@ nav #audio-controls #progress-volume-vertical div {
     width: 8px;
     height: 50%;
     background-color: var(--aside-font);
-}
-
-nav #audio-controls i:hover {
-    cursor: pointer;
 }
 
 @media screen and (max-width: 1328px) {
