@@ -22,7 +22,7 @@ html {
     --bcg-color: #141922;
     --aside-color: #000000;
     --nav-color: #282828;
-    --header-color: #080B12;
+    --header-color: #080B1280;
     --aside-font: gray;
     --heading-font: white;
     --hover-text: #ADFF2F;
@@ -79,7 +79,6 @@ aside li {
 }
 
 aside li:hover {
-    color: var(--heading-font);
     cursor: pointer;
 }
 
@@ -232,6 +231,10 @@ aside #profile div:nth-child(3) figure img {
     filter: none;
 }
 
+aside #profile div:nth-child(3) h3:active {
+    color: var(--aside-font);
+}
+
 main {
     width: calc(100% - 350px);
     overflow: auto;
@@ -240,7 +243,6 @@ main {
 main a {
     color: var(--aside-font);
 }
-
 
 main #upgrade-header {
     position: fixed;
@@ -251,7 +253,6 @@ main #upgrade-header {
     padding-block: 30px 45px;
     padding-right: 30px;
     z-index: 1;
-    box-shadow: 7px 39px 120px -33px rgba(0, 0, 0, 0.75);
 }
 
 main #upgrade-header a {
@@ -320,11 +321,12 @@ main .content>span {
 
 main .content .media-grid {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
 main .content .media-grid .media-box {
-    width: calc(100% / 6);
+    width: calc((100% / 6) - (100px / 6));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -404,6 +406,10 @@ nav #left-container #img-name ul li:hover,
 nav i:hover,
 nav #progress-volume-vertical {
     cursor: pointer;
+}
+
+nav i:active {
+    color: var(--aside-font);
 }
 
 progress::-webkit-progress-value {
@@ -517,10 +523,6 @@ nav #audio-controls #progress-volume-vertical div {
 
 @media screen and (max-width: 1328px) {
 
-    main .content .media-grid {
-        flex-wrap: wrap;
-    }
-
     main .content .media-grid .media-box {
         width: calc((100% / 4) - (60px / 4));
     }
@@ -548,8 +550,7 @@ nav #audio-controls #progress-volume-vertical div {
 @media screen and (max-width: 847px) {
 
     nav #left-container {
-        display: flex;
-        gap: 30px;
+        gap: 20px;
     }
 
     nav #left-container #icons {
