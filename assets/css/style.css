@@ -367,6 +367,10 @@ main .content .media-grid .media-box figure:hover i {
     display: block;
 }
 
+main .content .media-grid .media-box figure:active i {
+    color: var(--aside-font);
+}
+
 main .content#popular-artists .media-grid .media-box figure img {
     border-radius: 50%;
 }
@@ -462,6 +466,10 @@ nav #left-container #img-name figure:hover img {
 
 nav #left-container #img-name figure:hover i {
     display: block;
+}
+
+nav #left-container #img-name figure:active i {
+    color: var(--aside-font);
 }
 
 nav #left-container #img-name ul li:hover {
