@@ -256,6 +256,9 @@ main #upgrade-header {
 }
 
 main #upgrade-header a {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
     color: var(--heading-font);
     border: 1px solid var(--heading-font);
     border-radius: 30px;
