@@ -262,6 +262,10 @@ main #upgrade-header a {
     padding: 10px 35px;
 }
 
+main #upgrade-header a:hover {
+    scale: 1.2;
+}
+
 main #genres {
     margin-top: 94px;
 }
@@ -532,7 +536,7 @@ nav #audio-controls #progress-volume-vertical div {
     }
 }
 
-@media screen and (max-width: 1004px) {
+@media screen and (max-width: 1070px) {
 
     main .content .media-grid .media-box {
         width: calc((100% / 3) - (40px / 3));
